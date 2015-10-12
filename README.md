@@ -1,6 +1,6 @@
 # ToDoList
 
-Elements of To-Do List app in order:
+Elements of To-Do List app in order of completion:
 <br>
 <li>Allow user to create daily, weekly, monthly, or even yearly minimums in terms of productivity</li>
 <li>Record whether or not goals were completed within the time frame alloted by the user</li>
