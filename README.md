@@ -1,4 +1,5 @@
 # ToDoList
+The purpose of the To-Do List app is to not only help the user to track their productivity effectively, but also help them to identify the habits, external influences, and possibly even health choices that affect their capacity to achieve their goals.
 
 Elements of To-Do List (working title) app in order of completion:
 <br>
