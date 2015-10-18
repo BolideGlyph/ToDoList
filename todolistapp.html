@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+
+	<head>
+
+		<meta charset="UTF-8">
+		<title>
+		To Do List App
+		</title>
+
+		<link rel="stylesheet" type="text/css" href="ToDoListApp.css">
+
+		
+	</head>
+
+
+
+<body>
+
+<div id='body'>
+   
+
+
+
+
+		<div id="header">
+			<div id="logo">
+				Logo
+			</div>
+		Header
+		</div>
+
+
+		<div id='page'>
+
+
+
+	   <div id='sidebar'>
+				<div id="sidebarIconWrapper">
+					
+					<div class="sidebarIcon">
+					Home
+				    </div>
+					
+
+					<div class="sidebarIcon">
+					Activities
+					</div>
+					
+
+					<div class="sidebarIcon">
+					Mood Journal
+					</div>
+					
+
+					<div class="sidebarIcon">
+					Activity Chart
+					</div>
+				</div>
+
+	   </div>
+
+
+
+			
+
+
+			    <form style="display:none" id="activityInput">
+			    Activity<br>
+			    <input type="text" autocomplete="off" id="activity">
+			    <br><br>
+			    Activity Type
+			    <br>
+			    <input type="radio" name="activityType" class="activityType" value="Recreation">Recreation
+			    <br>
+			    <input type="radio" name="activityType" class="activityType" value="Work">Work
+			    <br>
+			    <input type="radio" name="activityType" class="activityType" value="Fitness">Fitness
+			    <br>
+			    <input type="radio" name="activityType" class="activityType" value="Self-Improvement"> Self-Improvement
+				<br><br>
+				Activity Frequency
+				<br>
+				<input type="radio" name="activityFrequency" class="activityFrequency" value="Daily">Daily
+			    <br>
+			    <input type="radio" name="activityFrequency" class="activityFrequency" value="Weekly">Weekly
+			    <br>
+			    <input type="radio" name="activityFrequency" class="activityFrequency" value="Monthly">Monthly
+			    <br>
+			    <input type="radio" name="activityFrequency" class="activityFrequency" value="Yearly">Yearly
+				<br><br>
+				<input id="submitButton" type="submit" value="Add">
+				</form>
+
+					
+				<table id="activityTable">
+				<thead>
+				
+					<th align="left">Activity!</th>
+					<th align="left">Activity Type!</th>
+				
+				</thead>
+				
+				
+				<th colspan="2" align="left">Daily</th>
+				<tbody id="daily"></tbody>
+
+				<th colspan="2" align="left">Weekly</th>
+				<tbody id="weekly"></tbody>
+
+				<th colspan="2" align="left">Monthly</th>
+				<tbody id="monthly"></tbody>
+
+				<th colspan="2" align="left">Yearly</th>
+				<tbody id="yearly"></tbody>
+
+				</table>
+
+
+		</div>
+
+
+		<div id="addActivityButton">
+			<p>Add Activity</p>
+		</div>
+
+
+</div>
+
+		<script src="jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="ToDoListApp.js"></script>
+
+</body>
+
+</html>
