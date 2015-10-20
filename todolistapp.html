@@ -18,6 +18,40 @@
 <body>
 
 <div id='body'>
+
+
+			<div style="display:none" id="overlayDiv">	
+				<div id="formDiv">
+
+			    <form id="activityInput">
+			    Activity<br>
+			    <input type="text" autocomplete="off" id="activity">
+			    <br><br>
+			    Activity Type
+			    <br>
+			    <input type="radio" name="activityType" class="activityType" value="Recreation">Recreation
+			    <br>
+			    <input type="radio" name="activityType" class="activityType" value="Work">Work
+			    <br>
+			    <input type="radio" name="activityType" class="activityType" value="Fitness">Fitness
+			    <br>
+			    <input type="radio" name="activityType" class="activityType" value="Self-Improvement"> Self-Improvement
+				<br><br>
+				Activity Frequency
+				<br>
+				<input type="radio" name="activityFrequency" class="activityFrequency" value="Daily">Daily
+			    <br>
+			    <input type="radio" name="activityFrequency" class="activityFrequency" value="Weekly">Weekly
+			    <br>
+			    <input type="radio" name="activityFrequency" class="activityFrequency" value="Monthly">Monthly
+			    <br>
+			    <input type="radio" name="activityFrequency" class="activityFrequency" value="Yearly">Yearly
+				<br><br>
+				<input id="submitButton" type="submit" value="Add">
+				<button id="cancelButton">Cancel</button>
+				</form>
+				</div>
+			</div>
    
 
 
@@ -29,9 +63,6 @@
 			</div>
 		Header
 		</div>
-
-
-		<div id='page'>
 
 
 
@@ -62,62 +93,37 @@
 
 
 
-			
+<div id='page'>
+
+	
+
+	<div class="Table">
+	    <div class="Heading">
+	        <div class="Cell">
+	            <p>Activity</p>
+	        </div>
+
+	        <div class="Cell">
+	            <p>Activity Type</p>
+	        </div>
+
+	        <div class="Cell">
+	            <p>Deletion</p>
+	        </div>
+	    </div>    
+	</div>
+
+	<p>Daily</p>
+	<div id="daily" class="Table"></div>
+	<p>Weekly</p>
+	<div id="weekly" class="Table"></div>
+	<p>Monthly</p>
+	<div id="monthly" class="Table"></div>
+	<p>Yearly</p>
+	<div id="yearly" class="Table"></div>
 
 
-			    <form style="display:none" id="activityInput">
-			    Activity<br>
-			    <input type="text" autocomplete="off" id="activity">
-			    <br><br>
-			    Activity Type
-			    <br>
-			    <input type="radio" name="activityType" class="activityType" value="Recreation">Recreation
-			    <br>
-			    <input type="radio" name="activityType" class="activityType" value="Work">Work
-			    <br>
-			    <input type="radio" name="activityType" class="activityType" value="Fitness">Fitness
-			    <br>
-			    <input type="radio" name="activityType" class="activityType" value="Self-Improvement"> Self-Improvement
-				<br><br>
-				Activity Frequency
-				<br>
-				<input type="radio" name="activityFrequency" class="activityFrequency" value="Daily">Daily
-			    <br>
-			    <input type="radio" name="activityFrequency" class="activityFrequency" value="Weekly">Weekly
-			    <br>
-			    <input type="radio" name="activityFrequency" class="activityFrequency" value="Monthly">Monthly
-			    <br>
-			    <input type="radio" name="activityFrequency" class="activityFrequency" value="Yearly">Yearly
-				<br><br>
-				<input id="submitButton" type="submit" value="Add">
-				</form>
 
-					
-				<table id="activityTable">
-				<thead>
-				
-					<th align="left">Activity!</th>
-					<th align="left">Activity Type!</th>
-				
-				</thead>
-				
-				
-				<th colspan="2" align="left">Daily</th>
-				<tbody id="daily"></tbody>
-
-				<th colspan="2" align="left">Weekly</th>
-				<tbody id="weekly"></tbody>
-
-				<th colspan="2" align="left">Monthly</th>
-				<tbody id="monthly"></tbody>
-
-				<th colspan="2" align="left">Yearly</th>
-				<tbody id="yearly"></tbody>
-
-				</table>
-
-
-		</div>
 
 
 		<div id="addActivityButton">
@@ -126,6 +132,8 @@
 
 
 </div>
+
+
 
 		<script src="jquery-1.11.3.js"></script>
 		<script type="text/javascript" src="ToDoListApp.js"></script>

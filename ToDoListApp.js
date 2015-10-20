@@ -2,22 +2,82 @@ var radioInput = "";
 var textInput = "";
 var frequencyInput = "";
 
+
 //function getTableData() {
 //$('#activityTable > tbody:first').append("<tr> <td>" + textInput + "</td> <td>" + radioInput + "</td> </tr> <br>");
 //};
 
 function getTableData() {
 if(frequencyInput === "Daily") {
-$("#daily").append("<tr> <td>" + textInput + "</td> <td>" + radioInput + "</td> </tr>");
+$("#daily").append("<div class=\"Row\">" +
+			        "<div class=\"Cell\">" +
+			            "<p>" + textInput + "</p>" +
+			        "</div>" +
+			        "<div class=\"Cell\">" +
+			            "<p>" + radioInput + "</p>" +
+			        "</div>" +
+			        "<div class=\"Cell\">" +
+			            "<button class=\"deleteButton\">Delete</button>" +
+			        "</div>" +
+			        "</div>");
+
+$('.deleteButton').click(function(){
+   $(this).parent().parent().remove();
+});
 }
 else if(frequencyInput === "Weekly") {
-$("#weekly").append("<tr> <td>" + textInput + "</td> <td>" + radioInput + "</td> </tr>");
+$("#weekly").append("<div class=\"Row\">" +
+			        "<div class=\"Cell\">" +
+			            "<p>" + textInput + "</p>" +
+			        "</div>" +
+			        "<div class=\"Cell\">" +
+			            "<p>" + radioInput + "</p>" +
+			        "</div>" +
+			        "<div class=\"Cell\">" +
+			            "<button class=\"deleteButton\">Delete</button>" +
+			        "</div>" +
+			        "</div>");
+
+$('.deleteButton').click(function(){
+   $(this).parent().parent().remove();
+});
+
 }
 else if(frequencyInput === "Monthly") {
-$("#monthly").append("<tr> <td>" + textInput + "</td> <td>" + radioInput + "</td> </tr>");
+$("#monthly").append("<div class=\"Row\">" +
+			        "<div class=\"Cell\">" +
+			            "<p>" + textInput + "</p>" +
+			        "</div>" +
+			        "<div class=\"Cell\">" +
+			            "<p>" + radioInput + "</p>" +
+			        "</div>" +
+			        "<div class=\"Cell\">" +
+			            "<button class=\"deleteButton\">Delete</button>" +
+			        "</div>" +
+			        "</div>");
+
+$('.deleteButton').click(function(){
+   $(this).parent().parent().remove();
+});
+
 }
 else if(frequencyInput === "Yearly") {
-$("#yearly").append("<tr> <td>" + textInput + "</td> <td>" + radioInput + "</td> </tr>");
+$("#yearly").append("<div class=\"Row\">" +
+			        "<div class=\"Cell\">" +
+			            "<p>" + textInput + "</p>" +
+			        "</div>" +
+			        "<div class=\"Cell\">" +
+			            "<p>" + radioInput + "</p>" +
+			        "</div>" +
+			        "<div class=\"Cell\">" +
+			            "<button class=\"deleteButton\">Delete</button>" +
+			        "</div>" +
+			        "</div>");
+
+$('.deleteButton').click(function(){
+   $(this).parent().parent().remove();
+});
+
 }
 };
 
@@ -37,15 +97,21 @@ $("#submitButton").click(function(e) {
     textInput = document.getElementById('activity').value;
  	getTableData();
  	var resetForm = document.getElementById("activityInput").reset();
- 	$('#activityInput').hide();
+ 	$('#overlayDiv').hide();
 });
 
+
+$("#cancelButton").click(function(e) {
+	e.preventDefault();
+	$('#overlayDiv').hide();
+});
 
 
 $('#addActivityButton').click(function(){
-	$('#activityInput').show();
+	$('#overlayDiv').show();
 });
 
 
-
-
+$('.deleteButton').click(function(){
+   $(this).parent().parent().remove();
+});
