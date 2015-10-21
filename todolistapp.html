@@ -62,18 +62,18 @@
 			    <br>
 
 			    <input type="radio" name="activityFrequency" class="activityFrequency" value="Yearly">Yearly
-				<br>
+				<br><br>
 
 				<input type="radio" id="customInterval" name="activityFrequency" class="activityFrequency" value="customInterval">Custom Interval
 				<br>
 					<div id="customIntBox" style="display:none">
-						<input id="customperInterval" type="number" min="1" name="customPerInterval" autocomplete="off"> times per every
+						<input id="customperInterval" type="number" min="1" name="customPerInterval" autocomplete="off"> time(s) per every
 						<input id="numCustomInt" type="number" min="2" name="numCustomInt" autocomplete="off">
 							  <select id="customIntSelect" name="customIntSelect">
-							  <option value="day">Days</option>
-							  <option value="week">Weeks</option>
-							  <option value="month">Months</option>
-							  <option value="year">Years</option>
+							  <option value="days">Days</option>
+							  <option value="weeks">Weeks</option>
+							  <option value="months">Months</option>
+							  <option value="years">Years</option>
 							  </select>
 					</div>
 				</fieldset>
@@ -149,7 +149,7 @@
 	    </div>    
 	</div>
 
-
+<div id="headerWrapper">
 	<p id="dailyHeader" style="display:none" class="tableHeader">Daily</p>
 		<div id="daily" class="Table"></div>
 
@@ -164,7 +164,7 @@
 
 	<p id="customHeader" style="display:none" class="tableHeader"></p>
 		<div id="custom" class="Table"></div>
-
+</div>
 
 </div>
 

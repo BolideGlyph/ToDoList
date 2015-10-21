@@ -115,13 +115,13 @@ function getTableData() {
 				        "</div>" +
 				        "</div>");
 
-	$("#customHeader").append(numCustomInt.value + " " + customIntSelect.value);
+	$("#customHeader").append("Every " + numCustomInt.value + " " + customIntSelect.value);
 	$('#customHeader').show();
 
 	/*$("#headerWrapper").append("<p id=\"customHeader\" style=\"display:none\" class=\"tableHeader\"></p>" +
 "<div id=\"custom\" class=\"Table\"></div>");*/
 
-/*dont forget to add headerWrapper Div to html*/
+/*for adding new headers for custom intervals*/
 
 
 	$('.deleteButton').click(function(){
@@ -148,9 +148,9 @@ $("#submitButton").click(function(e) {
     textInput = document.getElementById('activity').value;
 
     if(frequencyInput === "customInterval") {
-    perIntervalInput= customperInterval.value;
+    perIntervalInput= customperInterval.value + " time(s)";
     } else {
-    perIntervalInput= perInterval.value;
+    perIntervalInput= perInterval.value + " time(s)";
 	};
 
  	getTableData();
