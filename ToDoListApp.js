@@ -154,6 +154,7 @@ $("#submitButton").click(function(e) {
 	};
 
  	getTableData();
+ 	$("#customIntBox").hide();
  	var resetForm = document.getElementById("activityInput").reset();
  	$('#overlayDiv').hide();
 });
