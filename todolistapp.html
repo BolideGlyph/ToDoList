@@ -1,18 +1,13 @@
 <!doctype html>
 <html>
 
-	<head>
-
+<head>
 		<meta charset="UTF-8">
 		<title>
 		To Do List App
 		</title>
-
 		<link rel="stylesheet" type="text/css" href="ToDoListApp.css">
-
-		
-	</head>
-
+</head>
 
 
 <body>
@@ -20,16 +15,22 @@
 <div id='body'>
 
 
+<!-- DIV THAT POPS UP WHEN USER CLICKS THE "ADD ACTIVITY" BUTTON, INCLUDING THE INPUT FORM -->
+
+
 			<div style="display:none" id="overlayDiv">	
 				<div id="formDiv">
+
+<!-- FORM HEADER -->
 
 			<fieldset>
 			    <form id="activityInput">
 			    Activity<br>
 			    <input type="text" autocomplete="off" id="activity">
 			</fieldset>
+				<br>
 
-			<br>
+<!-- CATEGORIZES THE ACTIVITIES INTO DIFFERENT TYPES -->
 
 			<fieldset>
 			    Activity Type
@@ -43,8 +44,9 @@
 			    <br>
 			    <input type="radio" name="activityType" class="activityType" value="Self-Improvement"> Self-Improvement
 			</fieldset>
+				<br>
 
-			<br>
+<!-- 1. OPTIONS FOR HOW OFTEN USER WANTS THE ACTIVITY TO BE COMPLETED PER SPECICFIED INTERVAL -->
 
 			<fieldset>
 				Activity Frequency
@@ -63,6 +65,8 @@
 
 			    <input type="radio" name="activityFrequency" class="activityFrequency" value="Yearly">Yearly
 				<br><br>
+
+<!-- 2. FOR INPUT OF A CUSTOM INTERVAL TYPE -->
 
 				<input type="radio" id="customInterval" name="activityFrequency" class="activityFrequency" value="customInterval">Custom Interval
 				<br>
@@ -96,8 +100,6 @@
 		Header
 		</div>
 
-
-
 	   <div id='sidebar'>
 				<div id="sidebarIconWrapper">
 					
@@ -105,29 +107,28 @@
 					Home
 				    </div>
 					
-
 					<div class="sidebarIcon">
 					Activities
 					</div>
 					
-
 					<div class="sidebarIcon">
 					Mood Journal
 					</div>
 					
-
 					<div class="sidebarIcon">
 					Activity Chart
 					</div>
+
 				</div>
 
 	   </div>
 
-
+<!-- DIV ID "PAGE" ENCOMPASSES ALL PAGE SPACE, WITH THE EXCEPTION OF THE HEADER AND SIDEBAR -->
 
 <div id='page'>
-
 	
+<!-- TABLE FOR A CRONOLOGICALLY-SORTED LIST OF ACTIVITIES, ALONG WITH ALL OF THE PROPERTIES IT WAS GIVEN BY THE USER IN THE FORM -->
+
 <div id="tableWrapper">
 	<div class="Table">
 	    <div class="Heading">
@@ -169,7 +170,7 @@
 </div>
 
 
-
+<!-- DIV FOR BUTTON THAT TRIGGERS DISPLAY OF THE FORM -->
 
 		<div id="addActivityButton">
 			<p>Add Activity</p>
@@ -182,6 +183,7 @@
 
 		<script src="jquery-1.11.3.js"></script>
 		<script type="text/javascript" src="ToDoListApp.js"></script>
+		<script type="text/javascript" src="tableFunction.js"></script>
 
 </body>
 
