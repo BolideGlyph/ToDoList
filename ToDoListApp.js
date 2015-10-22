@@ -22,6 +22,7 @@ $("#submitButton").click(function(e) {
     perIntervalInput= perInterval.value + " time(s)";
 	};
 
+	getSelectBoxChoice();
 	customNumericalValue();
 	numericalValue();
  	getTableData();
