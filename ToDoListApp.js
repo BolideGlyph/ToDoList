@@ -7,6 +7,10 @@ $('input:radio[class=activityFrequency]').click(function() {
 frequencyInput = $('input:radio[class=activityFrequency]:checked').val();
 });
 
+/*$('input:select[id=customIntSelect]').click(function() {
+selectInput = $('input:select[id=customIntSelect]:text').val();
+});*/
+
 
 $("#submitButton").click(function(e) {
     e.preventDefault();
@@ -18,6 +22,8 @@ $("#submitButton").click(function(e) {
     perIntervalInput= perInterval.value + " time(s)";
 	};
 
+	customNumericalValue();
+	numericalValue();
  	getTableData();
  	$("#customIntBox").hide();
  	var resetForm = document.getElementById("activityInput").reset();
