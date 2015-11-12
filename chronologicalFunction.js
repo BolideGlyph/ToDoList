@@ -4,9 +4,12 @@
 var intSelectValue = "";
 var customIntSelectValue = "";
 var selectBoxChoice = "";
+var rowValue = 0;
 
 
-function numericalValue() {
+
+
+function standardValue() {
 	if (frequencyInput === "Daily") {
 	intSelectValue = 1; }
 	else if (frequencyInput === "Weekly") {
@@ -15,8 +18,9 @@ function numericalValue() {
 	intSelectValue = 30; }
 	else if (frequencyInput === "Yearly") {
 	intSelectValue = 365; }
+	else {
+	intSelectValue = 0; }
 }
-
 
 
 function getSelectBoxChoice() {
@@ -25,7 +29,8 @@ function getSelectBoxChoice() {
 	selectBoxChoice = valueSelect;
 }
 
-function customNumericalValue() {
+
+function customValue() {
 	if(selectBoxChoice === "Days") {
 	customIntSelectValue = 1 * numCustomInt.value; }
 	else if (selectBoxChoice === "Weeks") {
@@ -34,16 +39,13 @@ function customNumericalValue() {
 	customIntSelectValue = 30 * numCustomInt.value; }
 	else if (selectBoxChoice === "Years") {
 	customIntSelectValue = 365 * numCustomInt.value; }
+	else {customIntSelectValue = 0;}
 }
 
 
-/*var rowChrono = "";
 
-function() {
-if(user selects normal interval freq) {
-rowChrono = IntSelectValue;
-}
-if else() {
-rowChrono = customIntSelectValue * #customPerInterval.value;
-}
-}*/
+
+
+
+
+

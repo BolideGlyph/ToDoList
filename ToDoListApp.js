@@ -22,13 +22,18 @@ $("#submitButton").click(function(e) {
     perIntervalInput= perInterval.value + " time(s)";
 	};
 
+
 	getSelectBoxChoice();
-	customNumericalValue();
-	numericalValue();
+	customValue();
+	standardValue();
+ 	rowValue = intSelectValue + customIntSelectValue;
  	getTableData();
+ 	renderTable();
  	$("#customIntBox").hide();
  	var resetForm = document.getElementById("activityInput").reset();
  	$('#overlayDiv').hide();
+
+ 	
 });
 
 
