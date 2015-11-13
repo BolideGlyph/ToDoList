@@ -166,7 +166,9 @@ tableData.sort(function(a, b) {
 
 
 for(var i = 0; i < tableData.length; i++) {
-$("#tableWrapper").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
+
+	if (rowValue >= 1 && rowValue <= 1.99) {
+		$("#daily").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
 							"<div class=\"Cell\">" +
 						    "<p>" + tableData[i].textInput + "</p>" +
 						"</div>" +
@@ -180,6 +182,73 @@ $("#tableWrapper").append("<div data-id='" + tableData[i].rowValue + "' class=\"
 						    "<button class=\"deleteButton\">Delete</button>" +
 						"</div>" +
 						"</div>");
+		$('#dailyHeader').show();
+	}
+	else if (rowValue >= 7 && rowValue <= 7.99) {
+		$("#weekly").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
+							"<div class=\"Cell\">" +
+						    "<p>" + tableData[i].textInput + "</p>" +
+						"</div>" +
+						"<div class=\"Cell\">" +
+							"<p>" + tableData[i].perIntervalInput + "</p>" +
+						"</div>" +
+						"<div class=\"Cell\">" +
+						    "<p>" + tableData[i].radioInput + "</p>" +
+						"</div>" +
+						"<div class=\"Cell\">" +
+						    "<button class=\"deleteButton\">Delete</button>" +
+						"</div>" +
+						"</div>");
+		$('#weeklyHeader').show();
+	}
+	else if (rowValue >= 30 && rowValue <= 30.99) {
+		$("#monthly").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
+							"<div class=\"Cell\">" +
+						    "<p>" + tableData[i].textInput + "</p>" +
+						"</div>" +
+						"<div class=\"Cell\">" +
+							"<p>" + tableData[i].perIntervalInput + "</p>" +
+						"</div>" +
+						"<div class=\"Cell\">" +
+						    "<p>" + tableData[i].radioInput + "</p>" +
+						"</div>" +
+						"<div class=\"Cell\">" +
+						    "<button class=\"deleteButton\">Delete</button>" +
+						"</div>" +
+						"</div>");
+		$('#monthlyHeader').show();
+	}
+	else if (rowValue >= 365 && rowValue <= 365.99) {
+		$("#yearly").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
+							"<div class=\"Cell\">" +
+						    "<p>" + tableData[i].textInput + "</p>" +
+						"</div>" +
+						"<div class=\"Cell\">" +
+							"<p>" + tableData[i].perIntervalInput + "</p>" +
+						"</div>" +
+						"<div class=\"Cell\">" +
+						    "<p>" + tableData[i].radioInput + "</p>" +
+						"</div>" +
+						"<div class=\"Cell\">" +
+						    "<button class=\"deleteButton\">Delete</button>" +
+						"</div>" +
+						"</div>");
+		$('#yearlyHeader').show();
+	}
+/*$("#tableWrapper").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
+							"<div class=\"Cell\">" +
+						    "<p>" + tableData[i].textInput + "</p>" +
+						"</div>" +
+						"<div class=\"Cell\">" +
+							"<p>" + tableData[i].perIntervalInput + "</p>" +
+						"</div>" +
+						"<div class=\"Cell\">" +
+						    "<p>" + tableData[i].radioInput + "</p>" +
+						"</div>" +
+						"<div class=\"Cell\">" +
+						    "<button class=\"deleteButton\">Delete</button>" +
+						"</div>" +
+						"</div>");*/
 
 //deletes the activity from the table and array
 
@@ -197,10 +266,9 @@ $("#tableWrapper").append("<div data-id='" + tableData[i].rowValue + "' class=\"
 		}
 
 		$(this).parent().parent().remove();
-
-	   });
-
+	    });
 }
+
 }
 
 
