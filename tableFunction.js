@@ -142,7 +142,7 @@ function getTableData() {
 
 for(i=0; i < tableData.length; i++) {
 	if(tableData[i].rowValue === rowValue)
-		rowValue = rowValue + 1;
+		rowValue = rowValue + .01;
 }
 
 tableData.push({textInput, perIntervalInput, radioInput, rowValue});
@@ -163,8 +163,10 @@ tableData.sort(function(a, b) {
 
 //appends activity list to the table
 
+
+
 for(var i = 0; i < tableData.length; i++) {
-$("#tableWrapper").append("<div id='" + rowValue + "' class=\"Row\">" +
+$("#tableWrapper").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
 							"<div class=\"Cell\">" +
 						    "<p>" + tableData[i].textInput + "</p>" +
 						"</div>" +
@@ -179,10 +181,21 @@ $("#tableWrapper").append("<div id='" + rowValue + "' class=\"Row\">" +
 						"</div>" +
 						"</div>");
 
-//deletes the activity from the table
+//deletes the activity from the table and array
 
 	$('.deleteButton').click(function(){
-	   $(this).parent().parent().remove();
+	   
+	   var thisId = $(this).parent().parent().data('id');
+	   var deleteIndex = tableData.indexOf(tableData[i]);
+
+	   for(var i = 0; i < tableData.length; i++) {
+	   if(tableData[i].rowValue === thisId){
+		tableData.splice(deleteIndex, 1);
+		}
+		}
+
+		$(this).parent().parent().remove();
+
 	   });
 
 }
