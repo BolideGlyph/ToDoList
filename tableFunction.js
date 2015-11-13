@@ -186,9 +186,11 @@ $("#tableWrapper").append("<div data-id='" + tableData[i].rowValue + "' class=\"
 	$('.deleteButton').click(function(){
 	   
 	   var thisId = $(this).parent().parent().data('id');
-	   var deleteIndex = tableData.indexOf(tableData[i]);
 
 	   for(var i = 0; i < tableData.length; i++) {
+
+	   	var deleteIndex = tableData.indexOf(tableData[i]);
+
 	   if(tableData[i].rowValue === thisId){
 		tableData.splice(deleteIndex, 1);
 		}
@@ -200,6 +202,10 @@ $("#tableWrapper").append("<div data-id='" + tableData[i].rowValue + "' class=\"
 
 }
 }
+
+
+
+
 
 
 
