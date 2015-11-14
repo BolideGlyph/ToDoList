@@ -167,7 +167,7 @@ tableData.sort(function(a, b) {
 
 for(var i = 0; i < tableData.length; i++) {
 
-	if (rowValue >= 1 && rowValue <= 1.99) {
+	if (tableData[i].rowValue >= 1 && tableData[i].rowValue <= 1.99) {
 		$("#daily").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
 							"<div class=\"Cell\">" +
 						    "<p>" + tableData[i].textInput + "</p>" +
@@ -184,7 +184,7 @@ for(var i = 0; i < tableData.length; i++) {
 						"</div>");
 		$('#dailyHeader').show();
 	}
-	else if (rowValue >= 7 && rowValue <= 7.99) {
+	else if (tableData[i].rowValue >= 7 && tableData[i].rowValue <= 7.99) {
 		$("#weekly").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
 							"<div class=\"Cell\">" +
 						    "<p>" + tableData[i].textInput + "</p>" +
@@ -201,7 +201,7 @@ for(var i = 0; i < tableData.length; i++) {
 						"</div>");
 		$('#weeklyHeader').show();
 	}
-	else if (rowValue >= 30 && rowValue <= 30.99) {
+	else if (tableData[i].rowValue >= 30 && tableData[i].rowValue <= 30.99) {
 		$("#monthly").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
 							"<div class=\"Cell\">" +
 						    "<p>" + tableData[i].textInput + "</p>" +
@@ -218,7 +218,7 @@ for(var i = 0; i < tableData.length; i++) {
 						"</div>");
 		$('#monthlyHeader').show();
 	}
-	else if (rowValue >= 365 && rowValue <= 365.99) {
+	else if (tableData[i].rowValue >= 365 && tableData[i].rowValue <= 365.99) {
 		$("#yearly").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
 							"<div class=\"Cell\">" +
 						    "<p>" + tableData[i].textInput + "</p>" +
@@ -266,24 +266,27 @@ for(var i = 0; i < tableData.length; i++) {
 		}
 
 		$(this).parent().parent().remove();
+
+	if($('#daily').is(":empty")) {
+		$('#daily').hide();
+}
+
+	if($('#weekly').is(":empty")) {
+		$('#weekly').hide();
+}
+
+	if($('#monthly').is(":empty")) {
+		$('#monthly').hide();
+}
+
+	if($('#yearly').is(":empty")) {
+		$('#yearly').hide();
+}
+
 	    });
 }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
