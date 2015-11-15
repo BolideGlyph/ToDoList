@@ -164,11 +164,10 @@ tableData.sort(function(a, b) {
 //appends activity list to the table
 
 
-
 for(var i = 0; i < tableData.length; i++) {
 
-	if (tableData[i].rowValue >= 1 && tableData[i].rowValue <= 1.99) {
-		$("#daily").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
+
+var rowString = "<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
 							"<div class=\"Cell\">" +
 						    "<p>" + tableData[i].textInput + "</p>" +
 						"</div>" +
@@ -181,58 +180,24 @@ for(var i = 0; i < tableData.length; i++) {
 						"<div class=\"Cell\">" +
 						    "<button class=\"deleteButton\">Delete</button>" +
 						"</div>" +
-						"</div>");
+						"</div>";
+
+
+
+	if (tableData[i].rowValue >= 1 && tableData[i].rowValue <= 1.99) {
+		$("#daily").append(rowString);
 		$('#dailyHeader').show();
 	}
 	else if (tableData[i].rowValue >= 7 && tableData[i].rowValue <= 7.99) {
-		$("#weekly").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
-							"<div class=\"Cell\">" +
-						    "<p>" + tableData[i].textInput + "</p>" +
-						"</div>" +
-						"<div class=\"Cell\">" +
-							"<p>" + tableData[i].perIntervalInput + "</p>" +
-						"</div>" +
-						"<div class=\"Cell\">" +
-						    "<p>" + tableData[i].radioInput + "</p>" +
-						"</div>" +
-						"<div class=\"Cell\">" +
-						    "<button class=\"deleteButton\">Delete</button>" +
-						"</div>" +
-						"</div>");
+		$("#weekly").append(rowString);
 		$('#weeklyHeader').show();
 	}
 	else if (tableData[i].rowValue >= 30 && tableData[i].rowValue <= 30.99) {
-		$("#monthly").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
-							"<div class=\"Cell\">" +
-						    "<p>" + tableData[i].textInput + "</p>" +
-						"</div>" +
-						"<div class=\"Cell\">" +
-							"<p>" + tableData[i].perIntervalInput + "</p>" +
-						"</div>" +
-						"<div class=\"Cell\">" +
-						    "<p>" + tableData[i].radioInput + "</p>" +
-						"</div>" +
-						"<div class=\"Cell\">" +
-						    "<button class=\"deleteButton\">Delete</button>" +
-						"</div>" +
-						"</div>");
+		$("#monthly").append(rowString);
 		$('#monthlyHeader').show();
 	}
 	else if (tableData[i].rowValue >= 365 && tableData[i].rowValue <= 365.99) {
-		$("#yearly").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
-							"<div class=\"Cell\">" +
-						    "<p>" + tableData[i].textInput + "</p>" +
-						"</div>" +
-						"<div class=\"Cell\">" +
-							"<p>" + tableData[i].perIntervalInput + "</p>" +
-						"</div>" +
-						"<div class=\"Cell\">" +
-						    "<p>" + tableData[i].radioInput + "</p>" +
-						"</div>" +
-						"<div class=\"Cell\">" +
-						    "<button class=\"deleteButton\">Delete</button>" +
-						"</div>" +
-						"</div>");
+		$("#yearly").append(rowString);
 		$('#yearlyHeader').show();
 	}
 /*$("#tableWrapper").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
@@ -268,19 +233,19 @@ for(var i = 0; i < tableData.length; i++) {
 		$(this).parent().parent().remove();
 
 	if($('#daily').is(":empty")) {
-		$('#daily').hide();
+		$('#dailyHeader').hide();
 }
 
 	if($('#weekly').is(":empty")) {
-		$('#weekly').hide();
+		$('#weeklyHeader').hide();
 }
 
 	if($('#monthly').is(":empty")) {
-		$('#monthly').hide();
+		$('#monthlyHeader').hide();
 }
 
 	if($('#yearly').is(":empty")) {
-		$('#yearly').hide();
+		$('#yearlyHeader').hide();
 }
 
 	    });
