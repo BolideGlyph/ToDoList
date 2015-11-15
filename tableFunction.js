@@ -6,136 +6,7 @@ var selectInput = "";
 var tableData = [];
 
 
-
 //FUNCTION USED TO TAKE INPUT FROM FORM AND PUT IT INTO A TABLE ROW
-
-
-/*
-function getTableData() {
-	if(frequencyInput === "Daily") {
-	tableData.splice(1, 0 ,"<div value=" + "'" + rowValue + "'" + "class=\"Row\">" +
-				        "<div class=\"Cell\">" +
-				            "<p>" + textInput + "</p>" +
-				        "</div>" +
-				        "<div class=\"Cell\">" +
-				        	"<p>" + perIntervalInput + "</p>" +
-				        "</div>" +
-				        "<div class=\"Cell\">" +
-				            "<p>" + radioInput + "</p>" +
-				        "</div>" +
-				        "<div class=\"Cell\">" +
-				            "<button class=\"deleteButton\">Delete</button>" +
-				        "</div>" +
-				        "</div>");
-
-	$('#dailyHeader').show();
-
-	$('.deleteButton').click(function(){
-	   $(this).parent().parent().remove();
-	});
-	}
-
-	else if(frequencyInput === "Weekly") {
-	tableData.splice(7, 0, "<div value=" + "'" + rowValue + "'" + "class=\"Row\">" +
-				        "<div class=\"Cell\">" +
-				            "<p>" + textInput + "</p>" +
-				        "</div>" +
-				        "<div class=\"Cell\">" +
-				        	"<p>" + perIntervalInput + "</p>" +
-				        "</div>" +
-				        "<div class=\"Cell\">" +
-				            "<p>" + radioInput + "</p>" +
-				        "</div>" +
-				        "<div class=\"Cell\">" +
-				            "<button class=\"deleteButton\">Delete</button>" +
-				        "</div>" +
-				        "</div>");
-
-	$('#weeklyHeader').show();
-
-	$('.deleteButton').click(function(){
-	   $(this).parent().parent().remove();
-	});
-	}
-
-	else if(frequencyInput === "Monthly") {
-	tableData.splice(30, 0, "<div value=" + "'" + rowValue + "'" + "class=\"Row\">" +
-				        "<div class=\"Cell\">" +
-				            "<p>" + textInput + "</p>" +
-				        "</div>" +
-				        "<div class=\"Cell\">" +
-				        	"<p>" + perIntervalInput + "</p>" +
-				        "</div>" +
-				        "<div class=\"Cell\">" +
-				            "<p>" + radioInput + "</p>" +
-				        "</div>" +
-				        "<div class=\"Cell\">" +
-				            "<button class=\"deleteButton\">Delete</button>" +
-				        "</div>" +
-				        "</div>");
-
-	$('#monthlyHeader').show();
-
-	$('.deleteButton').click(function(){
-	   $(this).parent().parent().remove();
-	});
-	}
-
-	else if(frequencyInput === "Yearly") {
-	tableData.splice(365, 0, "<div value=" + "'" + rowValue + "'" + "class=\"Row\">" +
-				        "<div class=\"Cell\">" +
-				            "<p>" + textInput + "</p>" +
-				        "</div>" +
-				        "<div class=\"Cell\">" +
-				        	"<p>" + perIntervalInput + "</p>" +
-				        "</div>" +
-				        "<div class=\"Cell\">" +
-				            "<p>" + radioInput + "</p>" +
-				        "</div>" +
-				        "<div class=\"Cell\">" +
-				            "<button class=\"deleteButton\">Delete</button>" +
-				        "</div>" +
-				        "</div>");
-
-	$('#yearlyHeader').show();
-
-	$('.deleteButton').click(function(){
-	   $(this).parent().parent().remove();
-	});
-	}
-
-	else if(frequencyInput === "customInterval") {
-
-	tableData.splice(customIntSelectValue, 0, "<p class=\"tableHeader\">" +
-    						    "Every "+ numCustomInt.value + " " + customIntSelect.value + "</p>" +
-								"<div class=\"Table\">" +
-									"<div value=" + "'" + rowValue + "'" + "class=\"Row\">" +
-							        "<div class=\"Cell\">" +
-							            "<p>" + textInput + "</p>" +
-							        "</div>" +
-							        "<div class=\"Cell\">" +
-							        	"<p>" + perIntervalInput + "</p>" +
-							        "</div>" +
-							        "<div class=\"Cell\">" +
-							            "<p>" + radioInput + "</p>" +
-							        "</div>" +
-							        "<div class=\"Cell\">" +
-							            "<button class=\"deleteButton\">Delete</button>" +
-							        "</div>" +
-							        "</div>" +
-					        	"</div>");
-
-
-	$('.deleteButton').click(function(){
-	   $(this).parent().parent().remove();
-
-	});
-	}
-};
-
-
-*/
-
 
 
 function getTableData() {
@@ -145,10 +16,9 @@ for(i=0; i < tableData.length; i++) {
 		rowValue = rowValue + .01;
 }
 
-tableData.push({textInput, perIntervalInput, radioInput, rowValue});
+tableData.push({textInput, perIntervalInput, radioInput, rowValue, activityInt, span});
 
 }
-
 
 
 function renderTable(){
@@ -167,57 +37,30 @@ tableData.sort(function(a, b) {
 for(var i = 0; i < tableData.length; i++) {
 
 
-var rowString = "<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
-							"<div class=\"Cell\">" +
-						    "<p>" + tableData[i].textInput + "</p>" +
-						"</div>" +
-						"<div class=\"Cell\">" +
-							"<p>" + tableData[i].perIntervalInput + "</p>" +
-						"</div>" +
-						"<div class=\"Cell\">" +
-						    "<p>" + tableData[i].radioInput + "</p>" +
-						"</div>" +
-						"<div class=\"Cell\">" +
-						    "<button class=\"deleteButton\">Delete</button>" +
-						"</div>" +
-						"</div>";
+	var rowString = "<p class=\"tableHeader\">" +
+    				    "Every " + tableData[i].activityInt + " " + tableData[i].span + "</p>" +
+						"<div class=\"Table\">" +
+							"<div data-id=" + "'" + tableData[i].rowValue + "'" + "class=\"Row\">" +
+					        "<div class=\"Cell\">" +
+					            "<p>" + tableData[i].textInput + "</p>" +
+					        "</div>" +
+					        "<div class=\"Cell\">" +
+					        	"<p>" + tableData[i].perIntervalInput + "</p>" +
+					        "</div>" +
+					        "<div class=\"Cell\">" +
+					            "<p>" + tableData[i].radioInput + "</p>" +
+					        "</div>" +
+					        "<div class=\"Cell\">" +
+					            "<button class=\"deleteButton\">Delete</button>" +
+					        "</div>" +
+					        "</div>" +
+					      	"</div>";
 
 
+$("#tables").append(rowString);
 
-	if (tableData[i].rowValue >= 1 && tableData[i].rowValue <= 1.99) {
-		$("#daily").append(rowString);
-		$('#dailyHeader').show();
-	}
-	else if (tableData[i].rowValue >= 7 && tableData[i].rowValue <= 7.99) {
-		$("#weekly").append(rowString);
-		$('#weeklyHeader').show();
-	}
-	else if (tableData[i].rowValue >= 30 && tableData[i].rowValue <= 30.99) {
-		$("#monthly").append(rowString);
-		$('#monthlyHeader').show();
-	}
-	else if (tableData[i].rowValue >= 365 && tableData[i].rowValue <= 365.99) {
-		$("#yearly").append(rowString);
-		$('#yearlyHeader').show();
-	}
-/*$("#tableWrapper").append("<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
-							"<div class=\"Cell\">" +
-						    "<p>" + tableData[i].textInput + "</p>" +
-						"</div>" +
-						"<div class=\"Cell\">" +
-							"<p>" + tableData[i].perIntervalInput + "</p>" +
-						"</div>" +
-						"<div class=\"Cell\">" +
-						    "<p>" + tableData[i].radioInput + "</p>" +
-						"</div>" +
-						"<div class=\"Cell\">" +
-						    "<button class=\"deleteButton\">Delete</button>" +
-						"</div>" +
-						"</div>");*/
 
-//deletes the activity from the table and array
-
-	$('.deleteButton').click(function(){
+$('.deleteButton').click(function(){
 	   
 	   var thisId = $(this).parent().parent().data('id');
 
@@ -232,30 +75,16 @@ var rowString = "<div data-id='" + tableData[i].rowValue + "' class=\"Row\">" +
 
 		$(this).parent().parent().remove();
 
-	if($('#daily').is(":empty")) {
-		$('#dailyHeader').hide();
-}
 
-	if($('#weekly').is(":empty")) {
-		$('#weeklyHeader').hide();
-}
+//fix this
 
-	if($('#monthly').is(":empty")) {
-		$('#monthlyHeader').hide();
+	if($(this).parent().parent().is(":empty")) {
+		$(this).parent().closest(".tableHeader").remove();
 }
-
-	if($('#yearly').is(":empty")) {
-		$('#yearlyHeader').hide();
-}
-
-	    });
-}
+});
 
 }
-
-
-
-
+}
 
 
 
