@@ -55,6 +55,7 @@ for(var i = 0; i < tableData.length; i++) {
 					        "</div>" +
 					        "</div>" +
 					      	"</div>";
+					      	
 
 
 $("#tables").append(rowString);
@@ -78,7 +79,7 @@ $('.deleteButton').click(function(){
 
 //fix this
 
-	if($(this).parent().parent().is(":empty")) {
+if($(this).parent().parent().parent().is(":empty")) {
 		$(this).parent().closest(".tableHeader").remove();
 }
 });

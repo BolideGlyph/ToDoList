@@ -26,7 +26,7 @@ $("#submitButton").click(function(e) {
 	getSelectBoxChoice();
 	customValue();
 	standardValue();
- 	rowValue = intSelectValue + customIntSelectValue;
+ 	
 
  	if($("#customInterval").is(":checked")) {span = customIntSelect.value;}
  	else {span = frequencyInput};
@@ -34,6 +34,7 @@ $("#submitButton").click(function(e) {
  	if($("#customInterval").is(":checked")) {activityInt = numCustomInt.value;}
  	else {activityInt = ""};
 
+    rowValue = intSelectValue + customIntSelectValue;
  	getTableData();
  	renderTable();
  	$("#customIntBox").hide();

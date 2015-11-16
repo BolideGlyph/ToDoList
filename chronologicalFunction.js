@@ -10,13 +10,13 @@ var rowValue = 0;
 
 
 function standardValue() {
-	if (frequencyInput === "Daily") {
+	if (frequencyInput === "Day") {
 	intSelectValue = 1; }
-	else if (frequencyInput === "Weekly") {
+	else if (frequencyInput === "Week") {
 	intSelectValue = 7; }
-	else if (frequencyInput === "Monthly") {
+	else if (frequencyInput === "Month") {
 	intSelectValue = 30; }
-	else if (frequencyInput === "Yearly") {
+	else if (frequencyInput === "Year") {
 	intSelectValue = 365; }
 	else {
 	intSelectValue = 0; }
